@@ -16,5 +16,5 @@ from django.conf.urls import url
 from qa.views import question
 
 urlpatterns = [
-    url(r'^\d+\/?$', question),
+    url(r'', question),
 ]

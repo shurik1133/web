@@ -1,4 +1,4 @@
 sudo ln -sf /home/box/web/etc/nginx.conf /etc/nginx/sites-enabled/default
 sudo /etc/init.d/nginx restart
-sudo gunicorn -b 0.0.0.0:8080 hello
-sudo gunicorn -c etc/gunicorn_django.con
+sudo ln -sf /home/box/web/etc/gunicorn_django.conf /etc/gunicorn.d/test-django
+sudo /etc/init.d/gunicorn restart
