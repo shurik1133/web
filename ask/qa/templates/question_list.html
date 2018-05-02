@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block body %}
+    <p>{{ time }}</p>
     {% for q in questions %}
         {% include 'question_preview.html' with question=q %}
     {% endfor %}

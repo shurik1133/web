@@ -11,7 +11,7 @@ def question(request):
 
 
 def main(request):
-    qs = Question.objects.new()
+    qs = Question.new()
     limit = request.GET.get('limit', 10)
     page_number = request.GET.get('page', 1)
     paginator = Paginator(qs, limit)
@@ -24,14 +24,14 @@ def main(request):
 
 
 def popular(request):
-    qs = Question.objects.popular()
+    qs = Question.popular()
     page_number = request.GET.get('page', 1)
     paginator = Paginator(qs, request.GET.get('limit', 10))
     paginator.base_url = reverse('popular') + '?page='
     return render(request, 'question_list.html', {
         'questions': paginator.object_list,
         'paginator': paginator,
-        'page': page_number
+        'page': page_number,
     })
 
 
