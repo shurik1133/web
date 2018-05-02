@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    {% for q in questions %}
+        {% include 'question_preview.html' with question=q %}
+    {% endfor %}
+    <div>
+        {% for p in paginator.page_range %}
+            <a href={{ paginator.base_url }}{{ p }}>{{ p }}</a>
+        {% endfor %}
+    </div>
+{% endblock %}

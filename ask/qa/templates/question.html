@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <h3>{{ question.title }}</h3>
+    <p>{{ question.text }}</p>
+    <div>rating: {{ question.rating }}</div>
+    <div>
+        {% for a in question.answer_set %}
+            {% include 'answer.html' with answer=a %}
+        {% endfor %}
+    </div>
+{% endblock %}
