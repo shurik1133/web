@@ -2,7 +2,7 @@
 
 {% block body %}
     <p>{{ time }}</p>
-    {% for q in questions %}
+    {% for q in page.object_list %}
         {% include 'question_preview.html' with question=q %}
     {% endfor %}
     <div>
