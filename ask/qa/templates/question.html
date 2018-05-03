@@ -5,7 +5,7 @@
     <p>{{ question.text }}</p>
     <div>rating: {{ question.rating }}</div>
     <div>
-        {% for a in question.answer_set %}
+        {% for a in question.answer_set.all %}
             {% include 'answer.html' with answer=a %}
         {% endfor %}
     </div>

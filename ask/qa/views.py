@@ -34,14 +34,14 @@ def popular(request):
 
 
 def question(request, id):
-    question = get_object_or_404(Question, id=id)
+    q = get_object_or_404(Question, id=id)
     return render(request, 'question.html', {
-        'question': question,
+        'question': q,
     })
 
 
 def create(request):
-    for i in range(20):
+    for i in range(35, 40):
         title = 'Question' + str(i)
         q = Question.objects.create(title=title, text='Question text')
         q.save()

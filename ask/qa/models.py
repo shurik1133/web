@@ -24,7 +24,8 @@ class Question(models.Model):
     likes = models.ManyToManyField(User, related_name='question_likes_set')
 
     def get_url(self):
-        return reverse('question', kwargs={'id': self.id})
+        # return reverse('question', kwargs={'id': self.id})
+        return '/question/' + str(self.pk) + '/'
 
     def __str__(self):
         return self.title

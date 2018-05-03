@@ -7,7 +7,11 @@
     {% endfor %}
     <div>
         {% for p in paginator.page_range %}
-            <a href={{ paginator.base_url }}{{ p }}>{{ p }}</a>
+            {% if p == page.number %}
+                {{ p }}
+            {% else %}
+                <a href={{ paginator.base_url }}{{ p }}>{{ p }}</a>
+            {% endif %}
         {% endfor %}
     </div>
 {% endblock %}
